@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Rase Filter</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>RASE FILTER</h1>
+        <p>Pesquisa inteligente de Shorts</p>
+      </div>
+      <label class="switch" aria-label="Ativar Rase Filter">
+        <input id="enabled" type="checkbox">
+        <span></span>
+      </label>
+    </header>
+
+    <section>
+      <label for="minViews">Views mínimas</label>
+      <input id="minViews" type="number" min="0" step="1000">
+      <input id="minViewsRange" type="range" min="0" max="100000000" step="100000">
+      <div class="presets">
+        <button data-v="100000">100K</button>
+        <button data-v="500000">500K</button>
+        <button data-v="1000000">1M</button>
+        <button data-v="5000000">5M</button>
+        <button data-v="10000000">10M</button>
+      </div>
+    </section>
+
+    <section>
+      <label class="check"><input id="ageEnabled" type="checkbox"> Filtrar por idade máxima</label>
+      <div class="inline"><input id="maxAgeDays" type="number" min="0" max="3650"><span>dias</span></div>
+    </section>
+
+    <section>
+      <div class="row">
+        <label class="check"><input id="durationEnabled" type="checkbox"> Duração máxima</label>
+        <strong id="durationValue">28 segundos</strong>
+      </div>
+      <input id="maxDurationSeconds" type="range" min="1" max="180" step="1">
+      <div class="scale"><span>1s</span><span>3 min</span></div>
+      <p class="hint">Shorts acima deste tempo são pulados.</p>
+    </section>
+
+    <section>
+      <label>Idiomas bloqueados</label>
+      <div id="languages" class="languages"></div>
+      <label class="check sub"><input id="strictLanguage" type="checkbox"> Pular quando o idioma não for identificado</label>
+    </section>
+
+    <section><label class="check"><input id="skipAds" type="checkbox"> Pular anúncios automaticamente</label></section>
+    <section><label class="check"><input id="showBigViews" type="checkbox"> Mostrar HUD sobre o Short</label></section>
+
+    <section>
+      <div class="row">
+        <label class="check"><input id="soundEnabled" type="checkbox"> Controle de som</label>
+        <strong id="volumeValue">100%</strong>
+      </div>
+      <div class="soundControl">
+        <button id="muteToggle" type="button" title="Silenciar">🔊</button>
+        <input id="volumePercent" type="range" min="0" max="100" step="1">
+      </div>
+      <p class="hint">O volume escolhido é aplicado aos Shorts aprovados.</p>
+    </section>
+
+    <section>
+      <div class="libraryHead"><label>Referências salvas</label><button id="clearSaved">Limpar</button></div>
+      <input id="searchSaved" placeholder="Pesquisar salvos">
+      <div id="savedList"></div>
+    </section>
+  </main>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

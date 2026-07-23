@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Rase Filter",
+  "version": "3.1.1",
+  "description": "Versão estável baseada na 3.1: filtra Shorts por views, idade, idioma, duração e anúncios, com controle de som.",
+  "permissions": ["storage", "sidePanel"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Abrir Rase Filter" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/shorts/*"],
+    "js": ["content.js"],
+    "css": ["content.css"],
+    "run_at": "document_start"
+  }]
+}
