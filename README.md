@@ -20,4 +20,4 @@ Find viral YouTube Shorts in seconds.
 ## 📦 Install
 
 Chrome Web Store:
-https://chromewebstore.google.com/detail/SEU-LINK
+[https://chromewebstore.google.com/detail/SEU-LINK](https://chromewebstore.google.com/detail/rase-filter/japglfbaghahdolbnmghhiknodkimnmp?hl=en)
